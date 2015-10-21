@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+#sidebar {
+  width: 31.25%;
+  float: right;
+
+  @include media ('<tablet') {
+    float: none;
+    width: 100%;
+  }
+}
+
+// Widget
+.widget {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 3px 2px 0 rgba(0,0,0,.05);
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .title {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $razzmataz;
+    padding: 17px 19px 18px;
+    background: url(../img/sep02.png) repeat-x 0 100%;
+  }
+
+  .widget-content {
+    padding: 16px 20px;
+  }
+
+  .social-networks {
+    @extend %clearfix;
+    @extend %listreset;
+
+    font-size: 12px;
+    line-height: 14px;
+    margin: 5px -9px 0;
+
+    li {
+      float: left;
+      padding: 0 9px;
+      margin-bottom: 5px;
+
+      @include media ('<desktop') {
+        margin-bottom: 10px;
+      }
+
+      a{
+        display: block;
+        position: relative;
+        color: $arrow-town;
+        text-decoration: none;
+        padding: 4px 0 4px 28px;
+
+        &:hover {text-decoration: underline;}
+
+        &:before {
+          @include sprite(0, 0);
+
+          content:"";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 22px;
+          height: 22px;
+          margin-top: -11px;
+        }
+
+        &.twitter:before {background-position: -25px 0;}
+
+        &.google-plus:before {background-position: -50px 0;}
+      }
+    }
+  }
+
+  .list {
+    @extend %listreset;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 2px;
+
+    li {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        display: inline-block;
+        color: $arrow-town;
+        text-decoration: none;
+        position: relative;
+        padding-left: 25px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:after {
+          @include sprite(0 , -44px);
+          
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 2px;
+          width: 13px;
+          height: 9px;
+        }
+      }
+    }
+  }
+
+  .company-name {
+    display: block;
+    font-weight: bold;
+  }
+
+  address {
+    font-style: normal;
+  }
+}

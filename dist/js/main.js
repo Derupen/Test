@@ -6,7 +6,7 @@ $(document).ready(function() {
     rel: 'group1',
     loop: false,
     onComplete: function() {
-      var timeAnim = setTimeout($.colorbox.next, 500);
+      var timeAnim = setTimeout($.colorbox.next, 2000);
       if ($.colorbox.element().hasClass('last-child')) {
         clearTimeout(timeAnim);
         $.colorbox.close();
